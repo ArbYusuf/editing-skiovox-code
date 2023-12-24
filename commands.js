@@ -82,6 +82,15 @@ async function onCommand(name, currentTab) {
       cycleTabs(recentTabs, -1)
       break;
 
+case "BOOKMARK":
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.bookmarks.create({ 
+      'title': tab.title,
+      'url': tab.url
+    });
+  });
+  break;
+
     case "SWITCH_WINDOWS":
       chrome.windows.getAll((windows) => {
         if (windows.length > 1) {
