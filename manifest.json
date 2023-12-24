@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Bookmark Extension",
+  "version": "1.0",
+  "description": "An extension to create bookmarks using a keyboard shortcut.",
+  "permissions": ["tabs", "bookmarks"],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "bookmark-tab": {
+      "suggested_key": {
+        "default": "Ctrl+D"
+      },
+      "description": "Bookmark the current tab"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
