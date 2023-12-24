@@ -1,22 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Bookmark Extension",
+  "name": "Bookmark Shortcut",
   "version": "1.0",
-  "description": "An extension to create bookmarks using a keyboard shortcut.",
+  "description": "A simple extension to bookmark active tab with shortcut Control + D",
   "permissions": ["tabs", "bookmarks"],
-  "browser_action": {
-    "default_popup": "popup.html"
+  "background": {
+    "scripts": ["script.js"],
+    "persistent": false
   },
   "commands": {
-    "bookmark-tab": {
+    "bookmark_shortcut": {
       "suggested_key": {
         "default": "Ctrl+D"
       },
-      "description": "Bookmark the current tab"
+      "description": "Bookmark the active tab"
     }
   },
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  }
+  "manifest_key": "value"
 }
